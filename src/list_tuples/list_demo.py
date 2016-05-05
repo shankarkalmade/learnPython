@@ -16,3 +16,12 @@ print swpanil_data
 
 print sample_list
 
+present_roll_no= [10,20,1,15,30,45]
+print "Total present students: ", len(present_roll_no)
+
+print "smallest roll no : ", min(present_roll_no)
+
+print "largest roll no : ", max(present_roll_no)
+
+
+

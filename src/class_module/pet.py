@@ -1,4 +1,4 @@
-
+''' sample class and subclass '''
 class pet(object):
 
     def __init__(self, name, species):

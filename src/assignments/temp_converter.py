@@ -2,6 +2,8 @@
 
 ''' sample code to convert temp'''
 
+# test commit from pycharm community edition
+
 input_temp = input("Please enter temp tp convert :")
 target_metric = raw_input("Convert to (F)ahrenheit or (C)elsius?: ")
 

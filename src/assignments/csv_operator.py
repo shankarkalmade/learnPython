@@ -1,24 +1,60 @@
+import csv
+''' Read csv file conent'''
 
 
-class student:
+def csv_reader (file_object):
 
-    def __init__(self, id, name, roll_no, address):
-        self.id = id
-        self.name = name
-        self.roll_no =roll_no
-        self.address = address
+    reader = csv.reader(file_object)
+    for row in reader:
+        print row
 
-    def __str__(self):
-        return 'Student id: %d, Name: %s roll No: %d from %s' %s (self.id, self.name, self.roll_no, self.address)
+def use_dict_reader(file_object):
+    extract = []
+    reader = csv.DictReader(file_object)
+    for line in reader:
+            extract.append(line['variable_name']+','+line['dataset'])
+    return extract
+
+
+def csv_write (file , data):
+    with open(file, "wb") as csv_file:
+        writer = csv.writer(csv_file)
+        for line in data:
+            writer.writerow(line.split(","))
+
+
+file_name = "sample.csv"
+with open(file_name, "rb") as read_obj:
+    extracted_data = use_dict_reader(read_obj)
+
+print extracted_data
+
+
+'''Write Data to file '''
+write_path = "output.csv"
+csv_write(write_path,extracted_data)
+print "Done"
 
 
 
 
-student_list = []
 
-for index in range(1,10):
-    s = student(index, "shankar_%s" % index, index+10, "solapur")
-    student_list.append(s)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
